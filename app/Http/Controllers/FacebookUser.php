@@ -9,7 +9,7 @@ class FacebookUser extends Controller
 {
   public function store(Facebook $fb) //method injection
   {
-dd("dd");
+
       // retrieve form input parameters
       $uid = Request::input('uid');
       $access_token = Request::input('access_token');
@@ -17,17 +17,17 @@ dd("dd");
 
       // assuming we have a User model already set up for our database
       // and assuming facebook_id field to exist in users table in database
-      // $users = User::firstOrCreate(['facebook_id' => $uid]);
+     $users = User::firstOrCreate(['facebook_id' => $uid]);
 
       // get long term access token for future use
       $oAuth2Client = $fb->getOAuth2Client();
 
       // assuming access_token field to exist in users table in database
-    // $users->access_token = $oAuth2Client->getLongLivedAccessToken($token)->getValue();
-     //$users->save();
+     $users->access_token = $oAuth2Client->getLongLivedAccessToken($token)->getValue();
+     $users->save();
 
       // set default access token for all future requests to Facebook API
-      $fb->setDefaultAccessToken($access_token);
+      $fb->setDefaultAccessToken($users->$access_token);
 
       // call api to retrieve person's public_profile details
       $fields = "id,cover,name,first_name,last_name,age_range,link,gender,locale,picture,timezone,updated_time,verified";
