@@ -79,7 +79,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                   Test xxx Facebook
+                   Test Facebook
                 </div>
 
                 <div class="links">
