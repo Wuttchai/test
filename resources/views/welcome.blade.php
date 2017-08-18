@@ -123,7 +123,7 @@ function tt() {
                          _token:'{{ csrf_token() }}', // this is important for Laravel to receive the data
                          permissions:permissions
                        };
-            postData("{{ url('/login') }}", data, "post");
+            postData("{{ url('/xxx') }}", data, "post");
         }
         function postData(url, data, method)
         {

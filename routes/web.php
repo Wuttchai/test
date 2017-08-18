@@ -15,7 +15,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::post('login', 'FacebookUser@store');
+Route::post('xxx', 'FacebookUser@store');
 
 Auth::routes();
 
