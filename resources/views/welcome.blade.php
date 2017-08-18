@@ -79,7 +79,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                   Test API Facebook
+                   Test Facebook
                 </div>
 
                 <div class="links">
